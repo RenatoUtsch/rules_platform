@@ -12,13 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load(":local_cc_library.bzl", "local_cc_library")
 load(
-    "//platform:platform_select.bzl",
+    ":platform_select.bzl",
     "platform_select",
     "DEFAULT_PLATFORM_SELECT_TRANSLATORS",
 )
 load(
-    "//platform:repository_rule_select.bzl",
+    ":repository_rule_select.bzl",
     "repository_rule_select",
     "DEFAULT_REPOSITORY_RULE_SELECT_MATCHERS",
+)
+load(
+    ":path_join.bzl",
+    "host_path_separator",
+    "host_folder_separator",
+    "path_join",
 )

@@ -14,7 +14,7 @@
 
 workspace(name = "rules_platform")
 
-#load("//platform:defs.bzl", "local_cc_library")
+load("//platform:defs.bzl", "local_cc_library")
 
 # Proposed local_cc_library with different libs examples:
 # local_cc_library(
@@ -53,11 +53,11 @@ workspace(name = "rules_platform")
 # Proposed local_cc_library with different libs examples:
 # local_cc_library(
 #     name = "vulkan",
-#     libs = generate_lib_names({
-#         "windows": ["vulkan-1"],
-#         "macos": ["MoltenVK"],
-#         "default": ["vulkan"],
-#     }),
+#     # libs = generate_lib_names({
+#     #     "windows": ["vulkan-1"],
+#     #     "macos": ["MoltenVK"],
+#     #     "default": ["vulkan"],
+#     # }),
 #     libs = {
 #         "windows": ["vulkan-1.dll"],
 #         "macos": ["libMoltenVK.dylib"],
