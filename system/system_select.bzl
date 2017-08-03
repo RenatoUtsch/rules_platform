@@ -44,7 +44,7 @@ def windows_translator(value):
     }
 
 # Translators used by default in system_select.
-DEFAULT_system_SELECT_TRANSLATORS = {
+DEFAULT_SYSTEM_SELECT_TRANSLATORS = {
     "default": default_translator,
     "freebsd": freebsd_translator,
     "linux": linux_translator,
