@@ -14,9 +14,9 @@
 
 load(":local_cc_library.bzl", "local_cc_library")
 load(
-    ":platform_select.bzl",
-    "platform_select",
-    "DEFAULT_PLATFORM_SELECT_TRANSLATORS",
+    ":system_select.bzl",
+    "system_select",
+    "DEFAULT_SYSTEM_SELECT_TRANSLATORS",
 )
 load(
     ":repository_rule_select.bzl",

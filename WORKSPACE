@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-workspace(name = "rules_platform")
+workspace(name = "com_github_renatoutsch_rules_system")
 
-load("//platform:defs.bzl", "local_cc_library")
+load("//system:defs.bzl", "local_cc_library")
 
 # Proposed local_cc_library with different libs examples:
 # local_cc_library(

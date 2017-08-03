@@ -18,33 +18,33 @@ def default_translator(value):
 
 def freebsd_translator(value):
     """Translates a "freebsd" target to freebsd selections."""
-    return {"//platform:freebsd": value}
+    return {"//system:freebsd": value}
 
 def linux_translator(value):
     """Translates a "linux" target to linux selections."""
     return {
-        "//platform:linux_arm": value,
-        "//platform:linux_ppc": value,
-        "//platform:linux_ppc64": value,
-        "//platform:linux_s390x": value,
-        "//platform:linux_piii": value,
-        "//platform:linux_k8": value,
+        "//system:linux_arm": value,
+        "//system:linux_ppc": value,
+        "//system:linux_ppc64": value,
+        "//system:linux_s390x": value,
+        "//system:linux_piii": value,
+        "//system:linux_k8": value,
     }
 
 def macos_translator(value):
     """Translates a "macos" target to macos selections."""
-    return {"//platform:macos": value}
+    return {"//system:macos": value}
 
 def windows_translator(value):
     """Translates a "windows" target to windows selections."""
     return {
-        "//platform:windows_x64": value,
-        "//platform:windows_x64_msvc": value,
-        "//platform:windows_x64_msys": value,
+        "//system:windows_x64": value,
+        "//system:windows_x64_msvc": value,
+        "//system:windows_x64_msys": value,
     }
 
-# Translators used by default in platform_select.
-DEFAULT_PLATFORM_SELECT_TRANSLATORS = {
+# Translators used by default in system_select.
+DEFAULT_system_SELECT_TRANSLATORS = {
     "default": default_translator,
     "freebsd": freebsd_translator,
     "linux": linux_translator,
@@ -52,8 +52,8 @@ DEFAULT_PLATFORM_SELECT_TRANSLATORS = {
     "windows": windows_translator,
 }
 
-def platform_select(targets,
-                    translators=DEFAULT_PLATFORM_SELECT_TRANSLATORS):
+def system_select(targets,
+                    translators=DEFAULT_SYSTEM_SELECT_TRANSLATORS):
     """Wrapper over select() to simplify selecting OSs.
 
     It uses special targets that are expanded into the correct select()
@@ -69,7 +69,7 @@ def platform_select(targets,
     The function will only accept recognized targets. Use it like select. For
     example:
 
-    FLAGS = platform_select({
+    FLAGS = system_select({
         "windows": ["-DWINDOWS"],
         "default": ["-DUNIX"],
     })
@@ -80,11 +80,11 @@ def platform_select(targets,
     call with the generated selections.
 
 
-    You can customize platform_select() to add your own target translators by
+    You can customize system_select() to add your own target translators by
     replacing the default "translators" parameter with one of your own. You can
     even wrap that in another function to automatically call your translators.
     The translators used by default in this function are defined in
-    DEFAULT_PLATFORM_SELECT_TRANSLATORS, so that you can easily reuse them in
+    DEFAULT_SYSTEM_SELECT_TRANSLATORS, so that you can easily reuse them in
     your own function.
 
     Args:

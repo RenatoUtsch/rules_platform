@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load("//platform:defs.bzl", "platform_select")
+load("//system:defs.bzl", "system_select")
 
 package(default_visibility = ["//visibility:private"])
 
 cc_binary(
-    name = "platform_select_test",
-    srcs = ["platform_select_test.cc"],
-    copts = platform_select({
+    name = "system_select_test",
+    srcs = ["system_select_test.cc"],
+    copts = system_select({
         "windows": ["-DTEST_WINDOWS"],
         "linux": ["-DTEST_LINUX"],
         "macos": ["-DTEST_MACOS"],
