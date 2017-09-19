@@ -18,29 +18,29 @@ def default_translator(value):
 
 def freebsd_translator(value):
     """Translates a "freebsd" target to freebsd selections."""
-    return {"//system:freebsd": value}
+    return {"@com_github_renatoutsch_rules_system//system:freebsd": value}
 
 def linux_translator(value):
     """Translates a "linux" target to linux selections."""
     return {
-        "//system:linux_arm": value,
-        "//system:linux_ppc": value,
-        "//system:linux_ppc64": value,
-        "//system:linux_s390x": value,
-        "//system:linux_piii": value,
-        "//system:linux_k8": value,
+        "@com_github_renatoutsch_rules_system//system:linux_arm": value,
+        "@com_github_renatoutsch_rules_system//system:linux_ppc": value,
+        "@com_github_renatoutsch_rules_system//system:linux_ppc64": value,
+        "@com_github_renatoutsch_rules_system//system:linux_s390x": value,
+        "@com_github_renatoutsch_rules_system//system:linux_piii": value,
+        "@com_github_renatoutsch_rules_system//system:linux_k8": value,
     }
 
 def macos_translator(value):
     """Translates a "macos" target to macos selections."""
-    return {"//system:macos": value}
+    return {"@com_github_renatoutsch_rules_system//system:macos": value}
 
 def windows_translator(value):
     """Translates a "windows" target to windows selections."""
     return {
-        "//system:windows_x64": value,
-        "//system:windows_x64_msvc": value,
-        "//system:windows_x64_msys": value,
+        "@com_github_renatoutsch_rules_system//system:windows_x64": value,
+        "@com_github_renatoutsch_rules_system//system:windows_x64_msvc": value,
+        "@com_github_renatoutsch_rules_system//system:windows_x64_msys": value,
     }
 
 # Translators used by default in system_select.
